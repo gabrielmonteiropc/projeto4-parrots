@@ -1,0 +1,13 @@
+@media(max-width: 370px) {
+    .content {
+        margin: 0% 10%;
+
+        flex-direction: column;
+    }
+
+    .titulo {
+        font-size: 36px;
+
+        text-align: center;
+    }
+}

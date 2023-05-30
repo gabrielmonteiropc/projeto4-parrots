@@ -1,0 +1,81 @@
+    /*----------Formatações padrões----------*/
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #EEF9BF;
+        width: 100%;
+    }
+
+    /*----------Formatação do título----------*/
+    .titulo p {
+        font-family: 'Roboto', sans-serif;
+
+        color: #75B79E;
+
+        font-size: 56px;
+        font-weight: 700;
+
+        text-align: center;
+
+        padding-top: 40px;
+        padding-bottom: 47px;
+    }
+
+    /*----------Formatação do conteúdo----------*/
+    .conteudo {
+        gap: 15px;
+
+        margin: 0% 10%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+    }
+
+    /*----------Formatação das cartas----------*/
+    .card {
+        width: 117px;
+        height: 146px;
+
+        position: relative;
+    }
+
+    .card img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .face {
+        width: 100%;
+        height: 100%;
+
+        background-color: #A7E9AF;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        border: 1px solid #99CEA8;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        backface-visibility: hidden;
+        transition: all .5s;
+        transform-style: preserve-3d;
+    }
+
+    .back-face {
+        transform: rotateY(180deg);
+    }
+
+    .front {
+        transform: rotateY(-180deg);
+    }
+
+    .back {
+        transform: rotateY(0deg);
+    }
