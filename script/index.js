@@ -13,6 +13,15 @@ let baralho = [];
 let pergunta = 0;
 // Variável global
 let c1, c2;
+// Variável global
+let testeJogadas = 0, testeJogadasCertas = 0;
+
+// Função para verificar o fim de jogo
+function fimJogo() {
+    if (testeJogadasCertas === baralho.length) {
+        alert('fim de jogo');
+    }
+}
 
 // Função para desvirar as cartas quando o usuário em cartas erradas
 function desvirarSetTimeoOut() {
@@ -31,6 +40,8 @@ function virarCarta(cartaQueFoiClicada) {
         return;
     }
 
+    testeJogadas = testeJogadas + 1
+
     if (c1 === undefined) {
         c1 = cartaQueFoiClicada;
 
@@ -43,8 +54,12 @@ function virarCarta(cartaQueFoiClicada) {
 
             if (c2.innerHTML === c1.innerHTML) {
 
+                testeJogadasCertas = testeJogadasCertas + 2
+
                 c1 = undefined;
                 c2 = undefined;
+
+                fimJogo();
 
             } else {
 
