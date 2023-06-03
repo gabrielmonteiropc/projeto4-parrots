@@ -11,19 +11,50 @@ let cartasImagens = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalpar
 let baralho = [];
 // Variável global
 let pergunta = 0;
+// Variável global
+let c1, c2;
 
+// Função para desvirar as cartas quando o usuário em cartas erradas
+function desvirarSetTimeoOut() {
+
+    c1.classList.remove('virarCarta');
+    c2.classList.remove('virarCarta');
+
+    c1 = undefined;
+    c2 = undefined;
+}
 
 // Função que faz a virada de cartas 
 function virarCarta(cartaQueFoiClicada) {
-    console.log(cartaQueFoiClicada);
 
-    cartaQueFoiClicada.classList.add('virarCarta');
+    if (cartaQueFoiClicada.classList.contains('virarCarta')) {
+        return;
+    }
 
-    /*const cartaViradaFront = document.querySelector('.front-face');
-    cartaViradaFront.classList.toggle('front');
+    if (c1 === undefined) {
+        c1 = cartaQueFoiClicada;
 
-    const cartaViradaBack = document.querySelector('.back-face');
-    cartaViradaBack.classList.toggle('back');*/
+        c1.classList.add('virarCarta');
+    } else {
+        if (c2 === undefined) {
+            c2 = cartaQueFoiClicada;
+
+            c2.classList.add('virarCarta');
+
+            if (c2.innerHTML === c1.innerHTML) {
+
+                c1 = undefined;
+                c2 = undefined;
+
+            } else {
+
+                setTimeout(desvirarSetTimeoOut, 1000);
+
+            }
+        }
+    }
+    console.log(c1);
+    console.log(c2);
 }
 
 
