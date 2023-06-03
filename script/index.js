@@ -12,6 +12,21 @@ let baralho = [];
 // Variável global
 let pergunta = 0;
 
+
+// Função que faz a virada de cartas 
+function virarCarta(cartaQueFoiClicada) {
+    console.log(cartaQueFoiClicada);
+
+    cartaQueFoiClicada.classList.add('virarCarta');
+
+    /*const cartaViradaFront = document.querySelector('.front-face');
+    cartaViradaFront.classList.toggle('front');
+
+    const cartaViradaBack = document.querySelector('.back-face');
+    cartaViradaBack.classList.toggle('back');*/
+}
+
+
 // Função disponibilizada no Notion para embaralhar as cartas
 function comparador() {
     return Math.random() - 0.5;
@@ -74,13 +89,3 @@ function perguntarCartas() {
 
 // Executar a função que pergunta as cartas para que ao carregar a página apareça o prompt
 perguntarCartas()
-
-
-// Função que faz a virada de cartas 
-function virarCarta() {
-    const cartaViradaFront = document.querySelector('.front-face');
-    cartaViradaFront.classList.toggle('front');
-
-    const cartaViradaBack = document.querySelector('.back-face');
-    cartaViradaBack.classList.toggle('back');
-}
