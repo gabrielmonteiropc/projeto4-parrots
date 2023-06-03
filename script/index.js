@@ -12,6 +12,12 @@ let baralho = [];
 // Variável global
 let pergunta = 0;
 
+// Função disponibilizada no Notion para embaralhar as cartas
+function comparador() {
+    return Math.random() - 0.5;
+}
+
+
 // Função usada para aparecer as cartas no layout
 function mostrarCartas() {
     const conteudo = document.querySelector('.conteudo');
@@ -42,6 +48,8 @@ function cartasEmbaralhadas() {
         baralho.push(recebeCartas);
         baralho.push(recebeCartas);
     }
+
+    baralho.sort(comparador);
 
     console.log(baralho);
 
