@@ -19,7 +19,7 @@ let testeJogadas = 0, testeJogadasCertas = 0;
 // Função para verificar o fim de jogo
 function fimJogo() {
     if (testeJogadasCertas === baralho.length) {
-        alert('fim de jogo');
+        window.alert(`Você ganhou em ${testeJogadasCertas} jogadas!`);
     }
 }
 
