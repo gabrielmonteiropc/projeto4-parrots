@@ -132,5 +132,6 @@ function perguntarCartas() {
     cartasEmbaralhadas()
 }
 
+
 // Executar a função que pergunta as cartas para que ao carregar a página apareça o prompt
 perguntarCartas()
